@@ -1,7 +1,7 @@
-# 🎉 Analisis Sistem Antrian Kantin GKU‑2 (ITERA)
+#  Analisis Sistem Antrian Kantin GKU‑2 (ITERA)
 ---
 
-## 🔥 Tentang Proyek
+##  Tentang Proyek
 
 Proyek ini menganalisis **kinerja sistem antrian di Kantin GKU‑2 ITERA** menggunakan pendekatan **teori antrian (M/M/1 & M/M/2)** untuk memahami pola kedatangan pelanggan, waktu pelayanan, dan dampaknya terhadap durasi tunggu. 🚀
 
@@ -9,7 +9,7 @@ Tujuannya? **Memberikan rekomendasi operasional berbasis data** untuk mengurangi
 
 ---
 
-## 🌟 Ringkasan Temuan Utama
+##  Ringkasan Temuan Utama
 
 | Temuan                     | Detail                                                            |
 | -------------------------- | ----------------------------------------------------------------- |
@@ -23,7 +23,7 @@ Tujuannya? **Memberikan rekomendasi operasional berbasis data** untuk mengurangi
 
 ---
 
-## 🧠 Metodologi
+##  Metodologi
 
 🔹 Observasi langsung 10 jam pada jam operasional kantin (07:00 – 16:59)  
 🔹 Pencatatan data menggunakan tally counter & spreadsheet  
@@ -32,7 +32,7 @@ Tujuannya? **Memberikan rekomendasi operasional berbasis data** untuk mengurangi
 
 ---
 
-## 💡 Rekomendasi Operasional
+##  Rekomendasi Operasional
 
 | Strategi                                    | Dampak                              |
 | ------------------------------------------- | ----------------------------------- |
@@ -43,7 +43,7 @@ Tujuannya? **Memberikan rekomendasi operasional berbasis data** untuk mengurangi
 
 ---
 
-## 🗂️ Struktur Berkas Proyek
+##  Struktur Berkas Proyek
 
 ```
 📦 Analisis-Antrian-GKU2
@@ -59,7 +59,7 @@ Setiap artefak berfungsi sebagai bukti validasi dan pelengkap analisis.
 
 ---
 
-## 🚀 Quick Access
+##  Quick Access
 
 | Resource        | Tipe     | Keterangan                  |
 | --------------- | -------- | --------------------------- |
@@ -73,12 +73,12 @@ Setiap artefak berfungsi sebagai bukti validasi dan pelengkap analisis.
 
 ---
 
-## 🏆 Mengapa Proyek Ini Penting?
+##  Mengapa Proyek Ini Penting?
 
-✔ Meningkatkan kenyamanan pelanggan kantin 💺  
-✔ Mengurangi penumpukan antrian saat jam sibuk 🔄  
-✔ Memberikan dasar keputusan berbasis data untuk manajemen 🙌  
-✔ Contoh nyata penerapan **Sains Data + Pemodelan Stokastik** di lingkungan kampus 📚
+✔ Meningkatkan kenyamanan pelanggan kantin   
+✔ Mengurangi penumpukan antrian saat jam sibuk  
+✔ Memberikan dasar keputusan berbasis data untuk manajemen  
+✔ Contoh nyata penerapan **Sains Data + Pemodelan Stokastik** di lingkungan kampus 
 
 ---
 
@@ -91,10 +91,10 @@ Disusun untuk Tugas Besar **Pemodelan Stokastik** Kelompok 8 RA — Program Stud
 - Hermawan Manurung - 122450069
 ---
 
-## ❤️ Penutup
+##  Penutup
 
 Terima kasih telah mengunjungi repository ini! Jika proyek ini bermanfaat:
-⭐ **Berikan star di GitHub** — sangat berarti!
+⭐ **Berikan star di GitHub** hal ini sangat berarti dalam pengerjaan kedepannya!
 💬 Kritik & saran selalu diterima untuk pengembangan lanjutan.
 
 ---

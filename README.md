@@ -75,9 +75,9 @@ Setiap artefak berfungsi sebagai bukti validasi dan pelengkap analisis.
 
 ## 🏆 Mengapa Proyek Ini Penting?
 
-✔ Meningkatkan kenyamanan pelanggan kantin 💺
-✔ Mengurangi penumpukan antrian saat jam sibuk 🔄
-✔ Memberikan dasar keputusan berbasis data untuk manajemen 🙌
+✔ Meningkatkan kenyamanan pelanggan kantin 💺  
+✔ Mengurangi penumpukan antrian saat jam sibuk 🔄  
+✔ Memberikan dasar keputusan berbasis data untuk manajemen 🙌  
 ✔ Contoh nyata penerapan **Sains Data + Pemodelan Stokastik** di lingkungan kampus 📚
 
 ---
@@ -85,10 +85,10 @@ Setiap artefak berfungsi sebagai bukti validasi dan pelengkap analisis.
 ## 👥 Tim Proyek
 
 Disusun untuk Tugas Besar **Pemodelan Stokastik** Kelompok 8 RA — Program Studi Sains Data, Institut Teknologi Sumatera (ITERA)
-🔹 Eli Dwi Putra Berema - 122450064
-🔹 Cintya Bella - 122450066
-🔹 Haikal Dwi Syaputra - 122450067
-🔹 Hermawan Manurung - 122450069
+- Eli Dwi Putra Berema - 122450064
+- Cintya Bella - 122450066
+- Haikal Dwi Syaputra - 122450067
+- Hermawan Manurung - 122450069
 ---
 
 ## ❤️ Penutup

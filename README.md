@@ -85,9 +85,11 @@ Setiap artefak berfungsi sebagai bukti validasi dan pelengkap analisis.
 
 ## 👥 Tim Proyek
 
-📌 Disusun untuk Tugas Besar **Pemodelan Stokastik** — Program Studi Sains Data, Institut Teknologi Sumatera (ITERA)
-📅 Tahun 2025
-
+Disusun untuk Tugas Besar **Pemodelan Stokastik** Kelompok 8 RA — Program Studi Sains Data, Institut Teknologi Sumatera (ITERA)
+🔹 Eli Dwi Putra Berema - 122450064
+🔹 Cintya Bella - 122450066
+🔹 Haikal Dwi Syaputra - 122450067
+🔹 Hermawan Manurung - 122450069
 ---
 
 ## ❤️ Penutup

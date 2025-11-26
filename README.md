@@ -64,7 +64,7 @@ Setiap artefak berfungsi sebagai bukti validasi dan pelengkap analisis.
 | Resource        | Tipe     | Keterangan                  |
 | --------------- | -------- | --------------------------- |
 | 📄 [Poster_8_RA](https://github.com/sains-data/analisis-antrian-kantin-gk-2/blob/main/Poster_8_RA.pdf)  | Poster   | Ringkasan visual penelitian |
-| 🎬 Video_8_RA   | Video    | Presentasi hasil analisis   |
+| 🎬 [Video_8_RA](https://github.com/sains-data/analisis-antrian-kantin-gk-2/blob/main/Video_8_RA.mp4)  | Video    | Presentasi hasil analisis   |
 | 📘 Laporan_8_RA | Doc/PDF      | Dokumen laporan lengkap     |
 | 🔢 codeR_8_RA   | R Script | Kode analisis statistik     |
 | 📂 Dataset      | Folder   | Data mentah observasi       |

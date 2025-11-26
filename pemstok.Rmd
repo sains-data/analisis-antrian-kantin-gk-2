@@ -1,0 +1,156 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+library(readxl)
+library(dplyr)
+
+df <- read_excel(file_excel)
+
+# Pastikan kolom benar
+names(df) <- c("Jam", "Datang", "Selesai")
+
+# -------------------------
+# HITUNG LAJU RATA-RATA
+# -------------------------
+n_hours <- nrow(df)
+total_datang <- sum(df$Datang)
+total_selesai <- sum(df$Selesai)
+
+lambda_overall <- total_datang / n_hours
+mu_overall <- total_selesai / n_hours
+
+# -------------------------
+# FUNGSI M/M/1
+# -------------------------
+mm1_stats <- function(lambda, mu) {
+  rho <- lambda / mu
+  if (rho >= 1) {
+    return(list(
+      rho = rho,
+      stable = FALSE,
+      P0 = NA,
+      Lq = Inf,
+      Ls = Inf,
+      Wq = Inf,
+      Ws = Inf
+    ))
+  }
+  
+  P0 <- 1 - rho
+  Ls <- lambda / (mu - lambda)
+  Ws <- 1 / (mu - lambda)
+  Lq <- lambda^2 / (mu * (mu - lambda))
+  Wq <- lambda / (mu * (mu - lambda))
+  
+  return(list(
+    rho = rho,
+    stable = TRUE,
+    P0 = P0,
+    Lq = Lq,
+    Ls = Ls,
+    Wq = Wq,
+    Ws = Ws
+  ))
+}
+
+# -------------------------
+# FUNGSI M/M/c
+# -------------------------
+mmc_stats <- function(lambda, mu, c) {
+  a <- lambda / mu
+  rho_c <- a / c
+  
+  sum_term <- sum(sapply(0:(c-1), function(n) (a^n) / factorial(n)))
+  last_term <- (a^c / factorial(c)) * 1/(1 - rho_c)
+  
+  P0 <- 1 / (sum_term + last_term)
+  Lq <- P0 * (a^c) * rho_c / (factorial(c) * (1 - rho_c)^2)
+  Ls <- Lq + a
+  Wq <- Lq / lambda
+  Ws <- Wq + 1/mu
+  
+  return(list(
+    c = c,
+    a = a,
+    rho_c = rho_c,
+    P0 = P0,
+    Lq = Lq,
+    Ls = Ls,
+    Wq = Wq,
+    Ws = Ws
+  ))
+}
+
+# -------------------------
+# HITUNG METRIK OVERALL
+# -------------------------
+mm1_overall <- mm1_stats(lambda_overall, mu_overall)
+mm2_overall <- mmc_stats(lambda_overall, mu_overall, c = 2)
+
+# -------------------------
+# PER-HOUR CALCULATION
+# -------------------------
+df$lambda_hour <- df$Datang
+df$mu_hour <- df$Selesai
+df$rho_hour <- df$lambda_hour / df$mu_hour
+
+compute_mm1_hour <- function(lam, mu) {
+  res <- mm1_stats(lam, mu)
+  return(c(
+    rho = res$rho,
+    stable = res$stable,
+    P0 = res$P0,
+    Lq = res$Lq,
+    Ls = res$Ls,
+    Wq = res$Wq,
+    Ws = res$Ws
+  ))
+}
+
+hour_stats <- t(mapply(compute_mm1_hour, df$lambda_hour, df$mu_hour))
+hour_stats <- as.data.frame(hour_stats)
+
+# konversi ke numeric
+hour_stats <- hour_stats %>%
+  mutate(across(where(is.factor), as.character)) %>%
+  mutate(across(c(rho, P0, Lq, Ls, Wq, Ws), as.numeric))
+
+# gabungkan ke df
+df <- bind_cols(df, hour_stats)
+
+# konversi waktu ke menit
+df$Wq_min <- df$Wq * 60
+df$Ws_min <- df$Ws * 60
+
+# -------------------------
+# EXPORT CSV
+# -------------------------
+write.csv(df, "per_hour_metrics.csv", row.names = FALSE)
+
+summary_df <- data.frame(
+  metric = c("total_datang","total_selesai","n_hours","lambda_overall","mu_overall",
+             "mm1_rho_overall","mm1_stable_overall",
+             "mm2_rho_system","mm2_P0","mm2_Lq","mm2_Ls","mm2_Wq","mm2_Ws"),
+  value = c(
+    total_datang,
+    total_selesai,
+    n_hours,
+    lambda_overall,
+    mu_overall,
+    mm1_overall$rho,
+    mm1_overall$stable,
+    mm2_overall$rho_c,
+    mm2_overall$P0,
+    mm2_overall$Lq,
+    mm2_overall$Ls,
+    mm2_overall$Wq,
+    mm2_overall$Ws
+  )
+)
+
+write.csv(summary_df, "summary_metrics.csv", row.names = FALSE)
+
+```
+

@@ -47,13 +47,12 @@ Tujuannya? **Memberikan rekomendasi operasional berbasis data** untuk mengurangi
 
 ```
 📦 Analisis-Antrian-GKU2
+ ├─ Dataset/
+      └─ data_observasi.csv
  ├─ Poster_8_RA
  ├─ Video_8_RA
  ├─ Laporan_8_RA
- ├─ codeR_8_RA
- └─ Dataset/
-      ├─ data_observasi.csv
-      └─ ...
+ └─ codeR_8_RA
 ```
 
 Setiap artefak berfungsi sebagai bukti validasi dan pelengkap analisis.

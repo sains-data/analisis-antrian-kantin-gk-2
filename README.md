@@ -25,9 +25,9 @@ Tujuannya? **Memberikan rekomendasi operasional berbasis data** untuk mengurangi
 
 ## 🧠 Metodologi
 
-🔹 Observasi langsung 10 jam pada jam operasional kantin (07:00 – 16:59)
-🔹 Pencatatan data menggunakan tally counter & spreadsheet
-🔹 Pemodelan matematis menggunakan **M/M/1 & M/M/2**
+🔹 Observasi langsung 10 jam pada jam operasional kantin (07:00 – 16:59)  
+🔹 Pencatatan data menggunakan tally counter & spreadsheet  
+🔹 Pemodelan matematis menggunakan **M/M/1 & M/M/2**  
 🔹 Evaluasi performa sistem menggunakan parameter antrian: `ρ`, `P0`, `Wq`, `Ws`, `Lq`, `Ls`
 
 ---
@@ -63,9 +63,9 @@ Setiap artefak berfungsi sebagai bukti validasi dan pelengkap analisis.
 
 | Resource        | Tipe     | Keterangan                  |
 | --------------- | -------- | --------------------------- |
-| 📄 [Poster_8_RA](Poster_8_RA.pdf](https://github.com/sains-data/analisis-antrian-kantin-gk-2/blob/main/Poster_8_RA.pdf )  | Poster   | Ringkasan visual penelitian |
+| 📄 [Poster_8_RA](https://github.com/sains-data/analisis-antrian-kantin-gk-2/blob/main/Poster_8_RA.pdf)  | Poster   | Ringkasan visual penelitian |
 | 🎬 Video_8_RA   | Video    | Presentasi hasil analisis   |
-| 📘 Laporan_8_RA | PDF      | Dokumen laporan lengkap     |
+| 📘 Laporan_8_RA | Doc/PDF      | Dokumen laporan lengkap     |
 | 🔢 codeR_8_RA   | R Script | Kode analisis statistik     |
 | 📂 Dataset      | Folder   | Data mentah observasi       |
 

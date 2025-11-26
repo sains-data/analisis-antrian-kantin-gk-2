@@ -1,0 +1,63 @@
+---
+title: "preprocessing"
+output: html_document
+---
+
+```{r}
+library(dplyr)
+library(lubridate)
+library(tidyr)
+library(readr)
+library(stringr)
+
+# 1. Baca dataset
+# Pastikan path file CSV Anda benar
+df <- read_csv("C:/Users/Downloads/expanded_queue_events.csv")
+
+# 2. Proses Data
+rekap <- df %>%
+  select(
+    `Pelanggan ke-`, 
+    Datang = `Waktu Kedatangan`, 
+    Selesai = `Waktu selesai dilayani`
+  ) %>%
+  
+  # Mengubah struktur data agar bisa dihitung per jam sekaligus
+  pivot_longer(
+    cols = c(Datang, Selesai),
+    names_to = "Tipe",       # Akan berisi "Datang" atau "Selesai"
+    values_to = "Waktu_Raw"  # Akan berisi jamnya (misal 07.01.14)
+  ) %>%
+  
+  # Membersihkan format waktu
+  mutate(
+    # Ubah titik menjadi titik dua (07.01.14 -> 07:01:14) agar R paham
+    Waktu_Clean = str_replace_all(Waktu_Raw, "\\.", ":"),
+    
+    # Ubah jadi format waktu
+    Waktu_Obj = parse_date_time(Waktu_Clean, orders = c("HMS", "HM")),
+    
+    # Ambil angka jamnya saja (7, 8, 9, dst)
+    Jam_Angka = hour(Waktu_Obj),
+    
+    # Buat label jam cantik (07:00–07:59)
+    Jam_Label = sprintf("%02d:00–%02d:59", Jam_Angka, Jam_Angka)
+  ) %>%
+  
+  # Hitung jumlah per jam dan per tipe
+  group_by(Jam_Label, Tipe) %>%
+  summarise(Jumlah = n(), .groups = "drop") %>%
+  
+  # Kembalikan ke tabel rekap (Kolom Datang & Selesai bersebelahan)
+  pivot_wider(
+    names_from = Tipe,
+    values_from = Jumlah,
+    values_fill = 0
+  ) %>%
+  
+  # Urutkan berdasarkan jam
+  arrange(Jam_Label)
+
+# 3. Tampilkan hasil
+print(rekap)
+```
